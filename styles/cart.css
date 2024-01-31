@@ -198,19 +198,47 @@ form {
 
 /*parent card containing travel lines*/
 
-#filled-card {
+#filled-cart {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 300px;
+  max-height: 500px;
+  height: auto;
   width: 700px;
+  background-color: #ffffff;
   border-radius: 8px;
-  background-image: linear-gradient(to bottom, #ffffff 80%, #02002f 20%);
+  position: relative;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+#mycart {
+  align-self: flex-start;
+  text-align: center;
+  margin: 1rem;
+}
+
+/*the blue-marine part with total and purchase*/
+#filled-cart-bottom {
+  position: sticky;
+  color: white;
+  background: #02002f;
+  bottom: 0;
+  left: 0; /* La div enfant est alignée à gauche de la div parente */
+  right: 0; /* La div enfant occupe toute la largeur de la div parente */
+  height: 70px;
+  width: 700px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /*purchase button*/
-
-.purchase-button {
+#purchase-button {
   background-color: #469e86;
   color: white;
   border: none;
@@ -218,7 +246,10 @@ form {
   padding: 0.5rem 0;
   cursor: pointer;
   font-size: 1rem;
-  margin-top: 7rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 /*delete button*/
@@ -230,23 +261,28 @@ form {
   padding: 0.5rem 0;
   cursor: pointer;
   font-size: 1rem;
-  margin-top: 7rem;
+  width: 2rem;
 }
 
 /* line with travel from>to, departure hour, price, delete button*/
 .travel-line {
-  background-color: #959799;
-  width: 650px;
-  height: 100px;
+  background-color: #f5f5f5;
+  width: 600px;
+  height: 10px;
   font-family: sans-serif, Georgia, "Times New Roman", Times, serif;
   color: black;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
+  display: flex;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   justify-content: space-between; /* répartit l'espace entre les éléments */
   align-items: center; /* aligne les éléments au centre selon l'axe vertical */
 }
 
 #total {
-  color: white;
-  font-family: sans-serif, Georgia, "Times New Roman", Times, serif;
+  background-color: none;
+  border: none;
+  margin: 1rem;
+  padding: 1rem;
 }
